@@ -1,3 +1,8 @@
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+}
+
 document.addEventListener('scroll',()=>{
     const header=document.querySelector('header');
     if(window.scrollY>0){
