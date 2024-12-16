@@ -69,6 +69,7 @@ header{
 .hamburger i{
     font-size: 25px;
     display: none;
+    cursor: pointer;
 }
 header.scrolled{
    background: var(--bg1);
@@ -98,14 +99,14 @@ header .logo a{
     display: flex;
 }
 .navbar .nav-links{
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     gap: 50px;
 }
 
 .navbar .nav-links a{
     font-size: 1.1rem;
     color: var(--color2);
-    font-family: var(--font1);
     font-weight: 900;
     opacity: 0.8;
     font-family: "Noto Serif", serif;
@@ -156,13 +157,13 @@ header.scrolled .nav-links a:hover{
     grid-template-columns: repeat(2,1fr);
     gap: 30px;
 }
+
 .image-left img{
     width: 360px;
     height: 420px;
     border-radius: 50%;
     object-fit: cover;
     filter: drop-shadow(0 0 2rem hwb(350 2% 0%)) hue-rotate(30deg);
-
     animation: floatImage 4s ease-in-out infinite;
 }
 @keyframes floatImage {
@@ -192,11 +193,7 @@ header.scrolled .nav-links a:hover{
 .hero-title span{
     color: var(--color1);
 }
-.hero-title span:first-child{
- font-size: var(--font-size1);
- text-transform: lowercase;
- color: var(--color2);
-}
+
 .hero-title1 h2{
     word-spacing: 5px;
     font-size: var(--font-size1);
@@ -239,6 +236,7 @@ header.scrolled .nav-links a:hover{
        transform: translateY(-8px);
        filter: drop-shadow(0 0 2rem hwb(350 2% 0%));
    }
+  
    .ctn-btn button{
        padding: 10px 20px;
        font-size: 1.1rem;
@@ -246,9 +244,7 @@ header.scrolled .nav-links a:hover{
        background: transparent;
        border: 3px solid var(--color1);
        transition: 0.5s;
-       box-shadow: inset 0 0 7px 0 var(--color1);
        outline: none;
-       border-radius: 30px;
        cursor: pointer;
    }
    .ctn-btn a{
@@ -265,7 +261,7 @@ header.scrolled .nav-links a:hover{
    
 /* Mobile Responsive */
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:700px){
     .hero{
         display: flex;
         justify-content: center;
@@ -297,17 +293,35 @@ header.scrolled .nav-links a:hover{
     .navbar .nav-links{
         display: none;
         flex-direction: column;
-        background-color: #333;
+        background-color: rgb(112, 111, 112,0.7);
         position: absolute;
-        color: var(--color2);
-        top: 50px;
-        right: 50px;
+        top: 70px;
+        left: 0;
         width: 100%;
+        height: 500px;
         text-align: center;
-        padding: 10px 0;
-     
+        padding: 40px 0;
+        z-index: 100; 
+        gap: 50px;
     }
-    
+    .nav-links a{
+        margin: 20px 0;
+    }
+    .navbar .nav-links a:hover{
+        color: black;
+    }
+    .navbar .nav-links a::after{
+     display: none;
+    }
+    header.scrolled .navbar .nav-links a::after {
+        display: none;
+    }
+    .navbar .nav-links a:hover::after {
+        width: 30%;
+    }
+    .navbar .nav-links.active{
+        display: flex;
+    }
     header .hamburger i{
         display: inline-block;
         color: var(--color2);
@@ -315,7 +329,7 @@ header.scrolled .nav-links a:hover{
 }
 
 /* Tablet Responsive */
-@media only screen and (max-width: 834px){
+@media screen and (max-width: 1200px){
     .hero{
         display: flex;
         justify-content: center;
@@ -335,12 +349,39 @@ header.scrolled .nav-links a:hover{
     justify-content: space-between;
     padding: 15px 30px;
  }
- 
- .navbar .nav-links a{
+ .navbar .nav-links{
     display: none;
+    flex-direction: column;
+    background-color: rgba(255, 0, 21, 0.2);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 100;
    
- }
- 
+}
+.nav-links a{
+    margin: 20px 0;
+}
+.navbar .nav-links a::after{
+ display: none;
+}
+header.scrolled .navbar .nav-links a::after {
+    display: none;
+}
+.navbar .nav-links a:hover::after {
+    width: 30%;
+}
+.navbar .nav-links a:hover{
+    color: black;
+}
+ .navbar .nav-links.active{
+    display: flex;
+    flex-direction: column;
+}
  header .hamburger i{
     display: inline-block;
     color: var(--color2);
