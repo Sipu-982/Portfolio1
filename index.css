@@ -306,7 +306,7 @@ header.scrolled .nav-links a:hover{
         border-bottom: 2px solid var(--color2);   
      }
     .nav-links a{
-        margin: 20px 0;
+        margin: 18px 0;
     }
     .navbar .nav-links a:hover{
         color: black;
