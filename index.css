@@ -27,7 +27,9 @@ html,body{
 section{
     max-width: var(--width);
     min-height: 120vh;
-    padding: 5rem 4rem;
+    padding: 5rem 4rem;  
+      overflow-x: hidden;
+
    
 }
 ::-webkit-scrollbar {
