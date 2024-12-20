@@ -27,24 +27,12 @@ html,body{
 section{
     max-width: var(--width);
     min-height: 120vh;
-    padding: 5rem 4rem;
+    padding: 5rem 4rem;  
+      overflow-x: hidden;
+
    
 }
-::-webkit-scrollbar {
-    width: 15px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  ::-webkit-scrollbar-thumb {
-    background: rgb(0, 25, 0,0.5); 
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+
 a{
     text-decoration: none;
 }
@@ -261,7 +249,11 @@ header.scrolled .nav-links a:hover{
    
 /* Mobile Responsive */
 
-@media only screen and (max-width:700px){
+@media  screen and (max-width:700px){
+    section{
+        overflow-x: hidden;
+
+    }
     .hero{
         display: flex;
         justify-content: center;
